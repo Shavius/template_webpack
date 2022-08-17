@@ -4,8 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "webpack server",
-    "build": "webpack",
+    "start": "cross-env NODE_ENV=development webpack server",
+    "build": "cross-env NODE_ENV=development webpack",
     "clear": "rd /s /q dist"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
     "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.74.0",
