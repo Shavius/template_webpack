@@ -6,7 +6,7 @@ let devtool = 'source-map';
 
 if (process.env.NODE_ENV === 'production') {
 	mode = 'production';
-	devtool = 'none';
+	devtool = false;
 }
 
 module.exports = {
@@ -50,6 +50,20 @@ module.exports = {
 					'postcss-loader',
 					'sass-loader',
 				],
+			},
+			{
+				test: /\.(jpe?g|png|webp|gif|svg)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: 'img/[name][ext]',
+				},
+			},
+			{
+				test: /\.(woff2?|ttf|eot|svg)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: 'fonts/[name][ext]',
+				},
 			},
 		],
 	},
